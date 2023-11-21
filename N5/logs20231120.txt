@@ -1,0 +1,563 @@
+2023-11-20 13:19:36.195 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 13:19:36.247 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/index.html - -
+2023-11-20 13:19:36.273 -03:00 [INF] Hosting environment: Development
+2023-11-20 13:19:36.274 -03:00 [INF] Content root path: C:\Users\aleve\source\repos\N5\N5
+2023-11-20 13:19:36.949 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - -
+2023-11-20 13:19:36.949 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/index.html - - - 200 - text/html;charset=utf-8 691.0062ms
+2023-11-20 13:19:36.964 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_vs/browserLink - -
+2023-11-20 13:19:36.966 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 15.4000ms
+2023-11-20 13:19:37.067 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 102.5180ms
+2023-11-20 13:19:37.197 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - -
+2023-11-20 13:19:37.392 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 195.6038ms
+2023-11-20 13:19:40.345 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/Permission - -
+2023-11-20 13:19:40.359 -03:00 [INF] Executing endpoint 'WebApi.Controllers.PermissionController.GetAll (WebApi)'
+2023-11-20 13:19:40.390 -03:00 [INF] Route matched with {action = "GetAll", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller WebApi.Controllers.PermissionController (WebApi).
+2023-11-20 13:19:44.191 -03:00 [INF] GetAll Api executing...
+2023-11-20 13:19:46.164 -03:00 [INF] Executed DbCommand (118ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[EmployeeForename], [p].[EmployeeSurname], [p].[PermissionDate], [p].[PermissionTypeId], [p0].[Id], [p0].[Description]
+FROM [Permission] AS [p]
+INNER JOIN [PermissionType] AS [p0] ON [p].[PermissionTypeId] = [p0].[Id]
+2023-11-20 13:19:46.274 -03:00 [INF] GetAll Api finished...
+2023-11-20 13:19:46.286 -03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Domain.Entities.Permission, Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-11-20 13:19:46.315 -03:00 [INF] Executed action WebApi.Controllers.PermissionController.GetAll (WebApi) in 5921.1002ms
+2023-11-20 13:19:46.316 -03:00 [INF] Executed endpoint 'WebApi.Controllers.PermissionController.GetAll (WebApi)'
+2023-11-20 13:19:46.319 -03:00 [INF] HTTP GET /Permission responded 200 in 5966.5210 ms
+2023-11-20 13:19:46.327 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/Permission - - - 200 - application/json;+charset=utf-8 5982.6646ms
+2023-11-20 13:20:02.223 -03:00 [INF] Request starting HTTP/2 PUT https://localhost:44303/Permission application/json 117
+2023-11-20 13:20:02.224 -03:00 [INF] Executing endpoint 'WebApi.Controllers.PermissionController.Update (WebApi)'
+2023-11-20 13:20:02.242 -03:00 [INF] Route matched with {action = "Update", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Application.ViewModels.PermissionViewModel) on controller WebApi.Controllers.PermissionController (WebApi).
+2023-11-20 13:20:02.470 -03:00 [INF] Update permission Api executing...
+2023-11-20 13:20:02.558 -03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[EmployeeForename], [p].[EmployeeSurname], [p].[PermissionDate], [p].[PermissionTypeId], [p0].[Id], [p0].[Description]
+FROM [Permission] AS [p]
+INNER JOIN [PermissionType] AS [p0] ON [p].[PermissionTypeId] = [p0].[Id]
+WHERE [p].[Id] = @__model_Id_0
+2023-11-20 13:20:02.669 -03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Permission] SET [EmployeeForename] = @p0, [EmployeeSurname] = @p1, [PermissionDate] = @p2
+OUTPUT 1
+WHERE [Id] = @p3;
+2023-11-20 13:20:04.084 -03:00 [INF] Update permission Api finished
+2023-11-20 13:20:04.085 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Entities.Permission'.
+2023-11-20 13:20:04.086 -03:00 [INF] Executed action WebApi.Controllers.PermissionController.Update (WebApi) in 1843.5797ms
+2023-11-20 13:20:04.086 -03:00 [INF] Executed endpoint 'WebApi.Controllers.PermissionController.Update (WebApi)'
+2023-11-20 13:20:04.086 -03:00 [INF] HTTP PUT /Permission responded 200 in 1861.9559 ms
+2023-11-20 13:20:04.087 -03:00 [INF] Request finished HTTP/2 PUT https://localhost:44303/Permission application/json 117 - 200 - application/json;+charset=utf-8 1863.2924ms
+2023-11-20 13:20:35.206 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 13:20:35.237 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/index.html - -
+2023-11-20 13:20:35.252 -03:00 [INF] Hosting environment: Development
+2023-11-20 13:20:35.252 -03:00 [INF] Content root path: C:\Users\aleve\source\repos\N5\N5
+2023-11-20 13:20:35.724 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - -
+2023-11-20 13:20:35.725 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/index.html - - - 200 - text/html;charset=utf-8 490.0990ms
+2023-11-20 13:20:35.739 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 7.3472ms
+2023-11-20 13:20:35.756 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_vs/browserLink - -
+2023-11-20 13:20:35.815 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 59.7281ms
+2023-11-20 13:20:35.971 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - -
+2023-11-20 13:20:36.154 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 182.9502ms
+2023-11-20 13:20:45.423 -03:00 [INF] Request starting HTTP/2 PUT https://localhost:44303/Permission application/json 126
+2023-11-20 13:20:45.436 -03:00 [INF] Executing endpoint 'WebApi.Controllers.PermissionController.Update (WebApi)'
+2023-11-20 13:20:45.468 -03:00 [INF] Route matched with {action = "Update", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Application.ViewModels.PermissionViewModel) on controller WebApi.Controllers.PermissionController (WebApi).
+2023-11-20 13:20:47.136 -03:00 [INF] Update permission Api executing...
+2023-11-20 13:20:48.660 -03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__model_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[EmployeeForename], [p].[EmployeeSurname], [p].[PermissionDate], [p].[PermissionTypeId], [p0].[Id], [p0].[Description]
+FROM [Permission] AS [p]
+INNER JOIN [PermissionType] AS [p0] ON [p].[PermissionTypeId] = [p0].[Id]
+WHERE [p].[Id] = @__model_Id_0
+2023-11-20 13:20:48.800 -03:00 [ERR] Error occurred in Update method.
+System.Exception: Permission with id:100 was not found when trying to update a Permission
+   at Infrastructure.Repositories.PermissionRepository.Update(Permission model) in C:\Users\aleve\source\repos\N5\N5.Infrastructure\Repositories\PermissionRepository.cs:line 73
+   at Application.Services.PermissionService.Update(PermissionViewModel model) in C:\Users\aleve\source\repos\N5\Application\Services\PermissionService.cs:line 99
+2023-11-20 13:20:48.935 -03:00 [INF] Executed action WebApi.Controllers.PermissionController.Update (WebApi) in 3462.9597ms
+2023-11-20 13:20:48.938 -03:00 [INF] Executed endpoint 'WebApi.Controllers.PermissionController.Update (WebApi)'
+2023-11-20 13:20:48.942 -03:00 [ERR] HTTP PUT /Permission responded 500 in 3513.8705 ms
+System.Exception: Permission with id:100 was not found when trying to update a Permission
+   at Infrastructure.Repositories.PermissionRepository.Update(Permission model) in C:\Users\aleve\source\repos\N5\N5.Infrastructure\Repositories\PermissionRepository.cs:line 73
+   at Application.Services.PermissionService.Update(PermissionViewModel model) in C:\Users\aleve\source\repos\N5\Application\Services\PermissionService.cs:line 99
+   at WebApi.Controllers.PermissionController.Update(PermissionViewModel model) in C:\Users\aleve\source\repos\N5\N5\Controllers\PermissionController.cs:line 98
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-11-20 13:20:48.956 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Permission with id:100 was not found when trying to update a Permission
+   at Infrastructure.Repositories.PermissionRepository.Update(Permission model) in C:\Users\aleve\source\repos\N5\N5.Infrastructure\Repositories\PermissionRepository.cs:line 73
+   at Application.Services.PermissionService.Update(PermissionViewModel model) in C:\Users\aleve\source\repos\N5\Application\Services\PermissionService.cs:line 99
+   at WebApi.Controllers.PermissionController.Update(PermissionViewModel model) in C:\Users\aleve\source\repos\N5\N5\Controllers\PermissionController.cs:line 98
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-11-20 13:20:48.980 -03:00 [INF] Request finished HTTP/2 PUT https://localhost:44303/Permission application/json 126 - 500 - text/plain;+charset=utf-8 3556.6608ms
+2023-11-20 17:50:47.501 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 17:50:47.565 -03:00 [INF] Hosting environment: Development
+2023-11-20 17:50:47.564 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/index.html - -
+2023-11-20 17:50:47.566 -03:00 [INF] Content root path: C:\Users\aleve\source\repos\N5\N5
+2023-11-20 17:50:48.141 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/index.html - - - 200 - text/html;charset=utf-8 578.5817ms
+2023-11-20 17:50:48.142 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - -
+2023-11-20 17:50:48.158 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 10.3984ms
+2023-11-20 17:50:48.208 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_vs/browserLink - -
+2023-11-20 17:50:48.259 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 51.1562ms
+2023-11-20 17:50:48.483 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - -
+2023-11-20 17:50:48.742 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 265.5137ms
+2023-11-20 17:51:07.985 -03:00 [INF] Request starting HTTP/2 POST https://localhost:44303/Permission application/json 133
+2023-11-20 17:51:08.002 -03:00 [INF] Executing endpoint 'WebApi.Controllers.PermissionController.Create (WebApi)'
+2023-11-20 17:51:08.061 -03:00 [INF] Route matched with {action = "Create", controller = "Permission"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Application.ViewModels.PermissionModel) on controller WebApi.Controllers.PermissionController (WebApi).
+2023-11-20 17:51:08.646 -03:00 [INF] Create permission Api executing...
+2023-11-20 17:51:14.614 -03:00 [INF] Executed DbCommand (73ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[Description]
+FROM [PermissionType] AS [p]
+WHERE [p].[Id] = @__p_0
+2023-11-20 17:51:14.938 -03:00 [INF] Executed DbCommand (46ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permission] ([EmployeeForename], [EmployeeSurname], [PermissionDate], [PermissionTypeId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3);
+2023-11-20 17:51:23.389 -03:00 [INF] Create permission Api finished
+2023-11-20 17:51:29.807 -03:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Entities.Permission'.
+2023-11-20 17:51:30.979 -03:00 [INF] Executed action WebApi.Controllers.PermissionController.Create (WebApi) in 22913.7765ms
+2023-11-20 17:51:30.980 -03:00 [INF] Executed endpoint 'WebApi.Controllers.PermissionController.Create (WebApi)'
+2023-11-20 17:51:30.982 -03:00 [INF] HTTP POST /Permission responded 200 in 22991.4379 ms
+2023-11-20 17:51:30.995 -03:00 [INF] Request finished HTTP/2 POST https://localhost:44303/Permission application/json 133 - 200 - application/json;+charset=utf-8 23010.7481ms
+2023-11-20 19:21:56.808 -03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [PermissionType] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-20 19:23:02.716 -03:00 [INF] Executed DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [PermissionType] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-20 19:23:02.943 -03:00 [INF] Seed database associated with context N5DbContext
+2023-11-20 19:23:06.283 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 19:23:06.283 -03:00 [INF] Hosting environment: Development
+2023-11-20 19:23:06.283 -03:00 [INF] Content root path: C:\Users\aleve\source\repos\N5\N5
+2023-11-20 19:23:06.335 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/index.html - -
+2023-11-20 19:23:06.728 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/index.html - - - 200 - text/html;charset=utf-8 395.4527ms
+2023-11-20 19:23:06.790 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_vs/browserLink - -
+2023-11-20 19:23:06.790 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - -
+2023-11-20 19:23:06.819 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 22.3057ms
+2023-11-20 19:23:06.842 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 52.4228ms
+2023-11-20 19:23:06.989 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - -
+2023-11-20 19:23:07.209 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 219.7498ms
+2023-11-20 19:24:50.139 -03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [PermissionType] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-20 19:25:07.383 -03:00 [INF] Seed database associated with context N5DbContext
+2023-11-20 19:25:56.450 -03:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [PermissionType] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-20 19:25:56.862 -03:00 [INF] Executed DbCommand (76ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [PermissionType] USING (
+VALUES (@p0, 0),
+(@p1, 1),
+(@p2, 2)) AS i ([Description], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Description])
+VALUES (i.[Description])
+OUTPUT INSERTED.[Id], i._Position;
+INSERT INTO [PermissionType] ([Id], [Description])
+VALUES (@p3, @p4),
+(@p5, @p6),
+(@p7, @p8);
+MERGE [Permission] USING (
+VALUES (@p9, @p10, @p11, @p12, 0),
+(@p13, @p14, @p15, @p16, 1),
+(@p17, @p18, @p19, @p20, 2)) AS i ([EmployeeForename], [EmployeeSurname], [PermissionDate], [PermissionTypeId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([EmployeeForename], [EmployeeSurname], [PermissionDate], [PermissionTypeId])
+VALUES (i.[EmployeeForename], i.[EmployeeSurname], i.[PermissionDate], i.[PermissionTypeId])
+OUTPUT INSERTED.[Id], i._Position;
+2023-11-20 19:25:56.991 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.EntityFramework.N5DbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidOperationException: The instance of entity type 'PermissionType' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.UpdateIdentityMap(InternalEntityEntry entry, IKey key)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.KeyPropertyChanged(InternalEntityEntry entry, IProperty property, IEnumerable`1 containingPrincipalKeys, IEnumerable`1 containingForeignKeys, Object oldValue, Object newValue)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.KeyPropertyChanged(InternalEntityEntry entry, IProperty property, IEnumerable`1 keys, IEnumerable`1 foreignKeys, Object oldValue, Object newValue)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectKeyChange(InternalEntityEntry entry, IProperty property)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.PropertyChanged(InternalEntityEntry entry, IPropertyBase propertyBase, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.PropertyChanged(InternalEntityEntry entry, IPropertyBase property, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetProperty(IPropertyBase propertyBase, Object value, Boolean isMaterialization, Boolean setModified, Boolean isCascadeDelete, CurrentValueType valueType)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetStoreGeneratedValue(IProperty property, Object value, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.Update.ColumnModification.set_Value(Object value)
+   at Microsoft.EntityFrameworkCore.Update.ModificationCommand.PropagateResults(RelationalDataReader relationalReader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidOperationException: The instance of entity type 'PermissionType' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.UpdateIdentityMap(InternalEntityEntry entry, IKey key)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.KeyPropertyChanged(InternalEntityEntry entry, IProperty property, IEnumerable`1 containingPrincipalKeys, IEnumerable`1 containingForeignKeys, Object oldValue, Object newValue)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.KeyPropertyChanged(InternalEntityEntry entry, IProperty property, IEnumerable`1 keys, IEnumerable`1 foreignKeys, Object oldValue, Object newValue)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectKeyChange(InternalEntityEntry entry, IProperty property)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.PropertyChanged(InternalEntityEntry entry, IPropertyBase propertyBase, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.PropertyChanged(InternalEntityEntry entry, IPropertyBase property, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetProperty(IPropertyBase propertyBase, Object value, Boolean isMaterialization, Boolean setModified, Boolean isCascadeDelete, CurrentValueType valueType)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetStoreGeneratedValue(IProperty property, Object value, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.Update.ColumnModification.set_Value(Object value)
+   at Microsoft.EntityFrameworkCore.Update.ModificationCommand.PropagateResults(RelationalDataReader relationalReader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-11-20 19:25:57.131 -03:00 [ERR] An error occurred while seeding the database.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidOperationException: The instance of entity type 'PermissionType' cannot be tracked because another instance with the same key value for {'Id'} is already being tracked. When attaching existing entities, ensure that only one entity instance with a given key value is attached. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the conflicting key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.ThrowIdentityConflict(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry, Boolean updateDuplicate)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(TKey key, InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.IdentityMap`1.Add(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.UpdateIdentityMap(InternalEntityEntry entry, IKey key)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.KeyPropertyChanged(InternalEntityEntry entry, IProperty property, IEnumerable`1 containingPrincipalKeys, IEnumerable`1 containingForeignKeys, Object oldValue, Object newValue)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.KeyPropertyChanged(InternalEntityEntry entry, IProperty property, IEnumerable`1 keys, IEnumerable`1 foreignKeys, Object oldValue, Object newValue)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectKeyChange(InternalEntityEntry entry, IProperty property)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.PropertyChanged(InternalEntityEntry entry, IPropertyBase propertyBase, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.PropertyChanged(InternalEntityEntry entry, IPropertyBase property, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetProperty(IPropertyBase propertyBase, Object value, Boolean isMaterialization, Boolean setModified, Boolean isCascadeDelete, CurrentValueType valueType)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetStoreGeneratedValue(IProperty property, Object value, Boolean setModified)
+   at Microsoft.EntityFrameworkCore.Update.ColumnModification.set_Value(Object value)
+   at Microsoft.EntityFrameworkCore.Update.ModificationCommand.PropagateResults(RelationalDataReader relationalReader)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Infrastructure.EntityFramework.N5DbContextSeed.SeedAsync(N5DbContext n5DbContext, ILogger`1 logger) in C:\Users\aleve\source\repos\N5\N5.Infrastructure\EntityFramework\N5DbContextSeed.cs:line 21
+   at Program.<Main>$(String[] args) in C:\Users\aleve\source\repos\N5\N5\Program.cs:line 46
+2023-11-20 19:25:57.599 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 19:25:57.600 -03:00 [INF] Hosting environment: Development
+2023-11-20 19:25:57.600 -03:00 [INF] Content root path: C:\Users\aleve\source\repos\N5\N5
+2023-11-20 19:25:57.674 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/index.html - -
+2023-11-20 19:25:58.140 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/index.html - - - 200 - text/html;charset=utf-8 471.9650ms
+2023-11-20 19:25:58.144 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - -
+2023-11-20 19:25:58.155 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 4.6433ms
+2023-11-20 19:25:58.178 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_vs/browserLink - -
+2023-11-20 19:25:58.213 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 34.9824ms
+2023-11-20 19:25:58.322 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - -
+2023-11-20 19:25:58.497 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 175.1052ms
+2023-11-20 19:27:29.274 -03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [PermissionType] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-20 19:27:32.786 -03:00 [INF] Executed DbCommand (65ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [PermissionType] USING (
+VALUES (@p0, 0),
+(@p1, 1),
+(@p2, 2)) AS i ([Description], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Description])
+VALUES (i.[Description])
+OUTPUT INSERTED.[Id], i._Position;
+INSERT INTO [PermissionType] ([Id], [Description])
+VALUES (@p3, @p4),
+(@p5, @p6),
+(@p7, @p8);
+MERGE [Permission] USING (
+VALUES (@p9, @p10, @p11, @p12, 0),
+(@p13, @p14, @p15, @p16, 1),
+(@p17, @p18, @p19, @p20, 2)) AS i ([EmployeeForename], [EmployeeSurname], [PermissionDate], [PermissionTypeId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([EmployeeForename], [EmployeeSurname], [PermissionDate], [PermissionTypeId])
+VALUES (i.[EmployeeForename], i.[EmployeeSurname], i.[PermissionDate], i.[PermissionTypeId])
+OUTPUT INSERTED.[Id], i._Position;
+2023-11-20 19:27:32.858 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.EntityFramework.N5DbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'PermissionType' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:5a730324-0829-46f2-ac40-c534454411e7
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'PermissionType' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:5a730324-0829-46f2-ac40-c534454411e7
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-11-20 19:27:33.023 -03:00 [ERR] An error occurred while seeding the database.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'PermissionType' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:5a730324-0829-46f2-ac40-c534454411e7
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Infrastructure.EntityFramework.N5DbContextSeed.SeedAsync(N5DbContext n5DbContext, ILogger`1 logger) in C:\Users\aleve\source\repos\N5\N5.Infrastructure\EntityFramework\N5DbContextSeed.cs:line 21
+   at Program.<Main>$(String[] args) in C:\Users\aleve\source\repos\N5\N5\Program.cs:line 46
+2023-11-20 19:27:33.263 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 19:27:33.265 -03:00 [INF] Hosting environment: Development
+2023-11-20 19:27:33.265 -03:00 [INF] Content root path: C:\Users\aleve\source\repos\N5\N5
+2023-11-20 19:27:33.305 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/index.html - -
+2023-11-20 19:27:33.708 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - -
+2023-11-20 19:27:33.710 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/index.html - - - 200 - text/html;charset=utf-8 404.1275ms
+2023-11-20 19:27:33.718 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 8.3130ms
+2023-11-20 19:27:33.737 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_vs/browserLink - -
+2023-11-20 19:27:33.768 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 31.1860ms
+2023-11-20 19:27:33.871 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - -
+2023-11-20 19:27:34.053 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 181.5629ms
+2023-11-20 19:29:57.934 -03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [PermissionType] AS [p]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2023-11-20 19:30:21.464 -03:00 [INF] Executed DbCommand (64ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int32), @p8='?' (Size = 4000), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (DbType = DateTime2), @p20='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+MERGE [PermissionType] USING (
+VALUES (@p0, 0),
+(@p1, 1),
+(@p2, 2)) AS i ([Description], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Description])
+VALUES (i.[Description])
+OUTPUT INSERTED.[Id], i._Position;
+INSERT INTO [PermissionType] ([Id], [Description])
+VALUES (@p3, @p4),
+(@p5, @p6),
+(@p7, @p8);
+MERGE [Permission] USING (
+VALUES (@p9, @p10, @p11, @p12, 0),
+(@p13, @p14, @p15, @p16, 1),
+(@p17, @p18, @p19, @p20, 2)) AS i ([EmployeeForename], [EmployeeSurname], [PermissionDate], [PermissionTypeId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([EmployeeForename], [EmployeeSurname], [PermissionDate], [PermissionTypeId])
+VALUES (i.[EmployeeForename], i.[EmployeeSurname], i.[PermissionDate], i.[PermissionTypeId])
+OUTPUT INSERTED.[Id], i._Position;
+2023-11-20 19:30:21.531 -03:00 [ERR] An exception occurred in the database while saving changes for context type 'Infrastructure.EntityFramework.N5DbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'PermissionType' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8d9a801e-1fa6-4b85-9d93-62a795d77699
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'PermissionType' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8d9a801e-1fa6-4b85-9d93-62a795d77699
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2023-11-20 19:30:21.656 -03:00 [ERR] An error occurred while seeding the database.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert explicit value for identity column in table 'PermissionType' when IDENTITY_INSERT is set to OFF.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreResults(Boolean& moreResults)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryNextResult(Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.NextResultAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:8d9a801e-1fa6-4b85-9d93-62a795d77699
+Error Number:544,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Infrastructure.EntityFramework.N5DbContextSeed.SeedAsync(N5DbContext n5DbContext, ILogger`1 logger) in C:\Users\aleve\source\repos\N5\N5.Infrastructure\EntityFramework\N5DbContextSeed.cs:line 21
+   at Program.<Main>$(String[] args) in C:\Users\aleve\source\repos\N5\N5\Program.cs:line 46
+2023-11-20 19:30:21.856 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-11-20 19:30:21.859 -03:00 [INF] Hosting environment: Development
+2023-11-20 19:30:21.859 -03:00 [INF] Content root path: C:\Users\aleve\source\repos\N5\N5
+2023-11-20 19:30:21.897 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/index.html - -
+2023-11-20 19:30:22.244 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/index.html - - - 200 - text/html;charset=utf-8 349.9693ms
+2023-11-20 19:30:22.312 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_vs/browserLink - -
+2023-11-20 19:30:22.313 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - -
+2023-11-20 19:30:22.336 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_framework/aspnetcore-browser-refresh.js - - - 200 12344 application/javascript;+charset=utf-8 14.7787ms
+2023-11-20 19:30:22.359 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 46.3865ms
+2023-11-20 19:30:22.458 -03:00 [INF] Request starting HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - -
+2023-11-20 19:30:22.629 -03:00 [INF] Request finished HTTP/2 GET https://localhost:44303/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 170.5129ms
